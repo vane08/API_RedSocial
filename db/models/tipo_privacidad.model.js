@@ -19,7 +19,7 @@ const Tipo_Privacidad_Schema = {
 class TipoPrivacidad extends Model {
   static associate(models) {
     this.hasMany(models.Publicacion, {
-      as: 'publicacion',
+      as: 'publicaciones',
       foreignKey: 'id_tipo_privacidad'
     });
   }

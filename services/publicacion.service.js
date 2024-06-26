@@ -47,7 +47,7 @@ class PublicacionService {
         {
           model: models.Usuario,
           as: 'usuario',  // Alias de la asociación 'usuario'
-          // attributes: ['id_usuario', 'nombre_usuario', 'ap1', 'ap2', 'correo_electronico', 'fecha_nacimiento', 'foto_perfil']
+          attributes: ['id_usuario', 'nombre_usuario', 'ap1', 'ap2', 'correo_electronico', 'fecha_nacimiento', 'foto_perfil']
         },
         {
           model: models.TipoPrivacidad,

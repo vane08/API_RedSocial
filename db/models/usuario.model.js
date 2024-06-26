@@ -42,6 +42,25 @@ const UsuarioSchema = {
 
 class Usuario extends Model {
   static associate(models) {
+    this.hasMany(models.Publicacion, {
+      as: 'publicaciones',
+      foreignKey: 'id_usuario'
+    });
+
+    this.hasMany(models.Reaccion, {
+      as: 'reacciones',
+      foreignKey: 'id_usuario'
+    });
+
+    this.hasMany(models.Comentario, {
+      as: 'comentarios',
+      foreignKey: 'id_usuario'
+    });
+
+    this.hasMany(models.Compartir, {
+      as: 'compartidos',
+      foreignKey: 'id_usuario'
+    });
   }
 
   static config(sequelize) {

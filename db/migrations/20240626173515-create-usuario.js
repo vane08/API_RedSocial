@@ -1,7 +1,8 @@
 
+
 'use strict';
 
-const { UsuarioSchema, USUARIO_TABLE } = require('../models/usuario.model');
+const { UsuarioSchema, USUARIO_TABLE } = require('./../models/usuario.model');
 
 module.exports = {
   async up(queryInterface) {
@@ -12,5 +13,3 @@ module.exports = {
     await queryInterface.dropTable(USUARIO_TABLE);
   }
 };
-
-

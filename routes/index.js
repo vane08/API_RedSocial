@@ -5,6 +5,9 @@ const accionesRouter = require('./acciones.router');
 const reaccionesRouter = require('./reacciones.router');
 const amigosRouter = require('./amigos.router');
 const comentarioRouter = require('./comentario.router');
+const usuarioRouter = require('./usuario.router');
+const publicacionRouter = require('./publicacion.router');
+const tipoPrivacidadRouter = require('./tipo_privacidad.router');
 
 function routerApi(app) {
   const router = express.Router();
@@ -14,6 +17,9 @@ function routerApi(app) {
   router.use('/reacciones', reaccionesRouter);
   router.use('/amigos', amigosRouter);
   router.use('/comentarios', comentarioRouter);
+  router.use('/usuarios', usuarioRouter);
+  router.use('/publicaciones', publicacionRouter);
+  router.use('/tipoprivacidad', tipoPrivacidadRouter);
 }
 
 module.exports = routerApi;

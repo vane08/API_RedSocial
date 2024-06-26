@@ -2,7 +2,6 @@ const { Model, DataTypes } = require('sequelize');
 const { USUARIO_TABLE } = require('./usuario.model');
 const { TIPO_PRIVACIDAD_TABLE } = require('./tipo_privacidad.model');
 
-
 const PUBLICACION_TABLE = 'publicacion';
 
 const PublicacionSchema = {
@@ -61,9 +60,18 @@ class Publicacion extends Model {
       foreignKey: 'id_tipo_privacidad'
     });
 
+    this.hasMany(models.Compartir, {
+      as: 'compartidos',
+      foreignKey: 'id_publicacion'
+    });
 
     this.hasMany(models.Reaccion, {
-      as: 'publicacion',
+      as: 'reacciones',
+      foreignKey: 'id_publicacion'
+    });
+
+    this.hasMany(models.Comentario, {
+      as: 'comentarios',
       foreignKey: 'id_publicacion'
     });
   }
